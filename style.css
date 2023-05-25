@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #000;
+}
+#container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+#container .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#container .layer.bg {
+  background: url(./img/bg.jpg);
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container .layer.overlay {
+  background: url(./img/overlay.png);
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container .layer.assassins {
+  top: 150px;
+  background: url(./img/assassins.png);
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#container .layer.bottom {
+  background: url(./img/bottom.png);
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+section {
+  padding: 0 100px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+section img {
+  max-width: 500px;
+}
+section p {
+  color: #fff;
+  margin: 20px;
+}

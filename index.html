@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scrolling-website-which-using-GSAP-scrolltrigger</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div class="layer bg" data-speed="0.10"></div>
+      <div class="layer overlay" data-speed="-0.30"></div>
+      <div class="layer assassins" data-speed="0.25"></div>
+      <div class="layer bottom" data-speed="0"></div>
+    </div>
+    <section>
+      <img src="./img/text.png" alt="" />
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit quos
+        vero maiores consectetur dicta aperiam in nemo accusantium numquam eius
+        molestias eaque, veniam fuga voluptate commodi rerum possimus. Maxime,
+        unde?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit
+        quos vero maiores consectetur dicta aperiam in nemo accusantium numquam
+        eius molestias eaque, veniam fuga voluptate commodi rerum possimus.
+        Maxime, unde?Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Impedit quos vero maiores consectetur dicta aperiam in nemo accusantium
+        numquam eius molestias eaque, veniam fuga voluptate commodi rerum
+        possimus. Maxime, unde?Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Impedit quos vero maiores consectetur dicta aperiam in
+        nemo accusantium numquam eius molestias eaque, veniam fuga voluptate
+        commodi rerum possimus. Maxime, unde?Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Impedit quos vero maiores consectetur
+        dicta aperiam in nemo accusantium numquam eius molestias eaque, veniam
+        fuga voluptate commodi rerum possimus. Maxime, unde?Lorem, ipsum dolor
+        sit amet consectetur adipisicing elit. Impedit quos vero maiores
+        consectetur dicta aperiam in nemo accusantium numquam eius molestias
+        eaque, veniam fuga voluptate commodi rerum possimus. Maxime, unde?Lorem,
+        ipsum dolor sit amet consectetur adipisicing elit. Impedit quos vero
+        maiores consectetur dicta aperiam in nemo accusantium numquam eius
+        molestias eaque, veniam fuga voluptate commodi rerum possimus. Maxime,
+        unde?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit
+        quos vero maiores consectetur dicta aperiam in nemo accusantium numquam
+        eius molestias eaque, veniam fuga voluptate commodi rerum possimus.
+        Maxime, unde?Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Impedit quos vero maiores consectetur dicta aperiam in nemo accusantium
+        numquam eius molestias eaque, veniam fuga voluptate commodi rerum
+        possimus. Maxime, unde?Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Impedit quos vero maiores consectetur dicta aperiam in
+        nemo accusantium numquam eius molestias eaque, veniam fuga voluptate
+        commodi rerum possimus. Maxime, unde?Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Impedit quos vero maiores consectetur
+        dicta aperiam in nemo accusantium numquam eius molestias eaque, veniam
+        fuga voluptate commodi rerum possimus. Maxime, unde?Lorem, ipsum dolor
+        sit amet consectetur adipisicing elit. Impedit quos vero maiores
+        consectetur dicta aperiam in nemo accusantium numquam eius molestias
+        eaque, veniam fuga voluptate commodi rerum possimus. Maxime, unde?Lorem,
+        ipsum dolor sit amet consectetur adipisicing elit. Impedit quos vero
+        maiores consectetur dicta aperiam in nemo accusantium numquam eius
+        molestias eaque, veniam fuga voluptate commodi rerum possimus. Maxime,
+        unde?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit
+        quos vero maiores consectetur dicta aperiam in nemo accusantium numquam
+        eius molestias eaque, veniam fuga voluptate commodi rerum possimus.
+        Maxime, unde?Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Impedit quos vero maiores consectetur dicta aperiam in nemo accusantium
+        numquam eius molestias eaque, veniam fuga voluptate commodi rerum
+        possimus. Maxime, unde?Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Impedit quos vero maiores consectetur dicta aperiam in
+        nemo accusantium numquam eius molestias eaque, veniam fuga voluptate
+        commodi rerum possimus. Maxime, unde?Lorem, ipsum dolor sit amet
+        consectetur adipisicing elit. Impedit quos vero maiores consectetur
+        dicta aperiam in nemo accusantium numquam eius molestias eaque, veniam
+        fuga voluptate commodi rerum possimus. Maxime, unde?Lorem, ipsum dolor
+        sit amet consectetur adipisicing elit. Impedit quos vero maiores
+        consectetur dicta aperiam in nemo accusantium numquam eius molestias
+        eaque, veniam fuga voluptate commodi rerum possimus. Maxime, unde?Lorem,
+        ipsum dolor sit amet consectetur adipisicing elit. Impedit quos vero
+        maiores consectetur dicta aperiam in nemo accusantium numquam eius
+        molestias eaque, veniam fuga voluptate commodi rerum possimus. Maxime,
+        unde?
+      </p>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script>
+      const t1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#container",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      gsap.utils.toArray(".layer").forEach((layer) => {
+        const speed = layer.dataset.speed;
+        const movement = -(layer.offsetHeight * speed);
+        t1.to(layer, { y: movement, ease: "none" }, 0);
+      });
+    </script>
+  </body>
+</html>
